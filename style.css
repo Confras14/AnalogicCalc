@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Segmental 7';
+  src: url('fonts/7SEGMENTALDIGITALDISPLAY.ttf') format('truetype'); /* Caminho para o arquivo da fonte */
+}
+
+:root {
+  --BrandColor-light1: #FF4747;
+  --BrandColor-light2: #952D2D;
+  
+  --BrandColor-dark1: #9747FF;
+  --BrandColor-dark2: #FF4747;
+
+  --White: #FEFEFE;
+  --Black: #0A0A0A;
+
+  --Grey-100: #EDEDED;
+  --Grey-200: #D9D9D9;
+  --Grey-300: #A1A1A1;
+  --Grey-400: #696969;
+  --Grey-500: #515151;
+  --Grey-600: #2C2C2C;
+  --Grey-700: #222;
+  --Grey-900: #1E1E1E;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 96px;
+}
+
+h1 {
+  font-family: "Jersey 10", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.switchMode {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 2.5rem;
+  width: 5rem;
+  padding: 4px;
+  background-color: var(--Grey-100);
+  justify-content: space-between;
+  align-items: center;  
+  border-radius: 50px;
+}
+
+.switchMode:hover {
+  cursor: pointer;
+}
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+
+  margin-inline: auto;
+
+  background-color: var(--Grey-300);
+}
+
+.All-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+
+}
+
+.All-buttons, .buttons {
+  gap: 1.25rem;
+}
+
+.buttonsRow {
+  display: flex;
+  flex-wrap: wrap;
+  width: 15.75rem;
+  gap: 1.25rem
+}
+
+.line04-05 {
+  display: flex;
+  gap: 1.25rem
+}
+
+button {
+  width: 72px;
+  height: 72px;
+  font-family: "Jersey 10", serif;
+  font-size: 2.5rem;
+  border-radius: 20px;
+  border: none;
+  padding: auto;
+  color: var(--Grey-100);
+  background-color: var(--Grey-400);
+  box-shadow: -6px 6px var(--Grey-500);
+}
+
+.highButton {
+  height: 164px;
+}
+
+.funcButton {
+  background-color: var(--BrandColor-light1);
+  box-shadow: -6px 6px var(--BrandColor-light2);
+}
+
+.funcButton:hover {
+  box-shadow: none;
+
+
+  transform: translate(-6px, 6px); /* Move o botão 6px para a direita e 6px para baixo */
+
+
+  transition: 0.5s ease;
+}
+
+/* White mode */
+header {
+  background-color: var(--BrandColor-light1);
+  color: var(--Grey-100);
+}
+
+.switch-white {
+  background-color: var(--BrandColor-light1);
+  padding: 4px;
+  border-radius: 100px;
+}
+
+.switch-white-img {
+  width: 22px;
+  height: 22px;
+}
+
+.switch-white-img:hover {
+  cursor: pointer;
+}
+
+.switch-dark {
+  display: none;
+}
+
+/* Black mode */
+
