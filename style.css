@@ -89,7 +89,7 @@ main {
 }
 
 .textDisplay {
-  color: var(--Grey-200);
+  color: var(--Grey-100);
   font-family: 'Segmental 7';
   font-size: 3rem;
   letter-spacing: 6px;
@@ -152,9 +152,7 @@ button:hover {
 
 .funcButton:active, .numButton:active {
   box-shadow: none;
-  
-  transform: translate(-6px, 6px); /* Move o botão 6px para a direita e 6px para baixo */
-  
+  transform: translate(-6px, 6px);
   transition: 0.075s ease;
 }
 
