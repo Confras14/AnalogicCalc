@@ -47,6 +47,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 400;
   color: var(--Grey-100);
+  cursor: default;
 }
 
 ul {
@@ -82,6 +83,7 @@ main {
   background-color: var(--Grey-500);
   border-radius: 20px;
 
+  cursor: default;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -137,6 +139,8 @@ button {
 button:hover {
   background-color: var(--Grey-500);
   box-shadow: -6px 6px var(--Grey-600);
+
+  cursor: pointer;
 }
 
 

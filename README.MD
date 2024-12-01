@@ -21,10 +21,9 @@
   3. Clique em "=" para ver o cálculo final.
 
 ## Imagens
-![Analogic Calc](https://github.com/your-username/Analogic-Calc)
-![Analogic Calc](https://github.com/your-username/Analogic-Calc)
-![Analogic Calc](https://github.com/your-username/Analogic-Calc)
-
+![Analogic Calc](./Image/Screenshot_3.png))
+![Analogic Calc](./Image/Screenshot_4.png))
+![Analogic Calc](./Image/Screenshot_5.png))
 
 ## Link de Hospedagem 🌐
   Acesse a calculadora online:
@@ -32,4 +31,4 @@
 ## Contribuição 🤝
   Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias e novas funcionalidades.
 
-Link Hospedagem: [Vercel]()
+Link Hospedagem: [Vercel](https://analogic-calc.vercel.app/)
