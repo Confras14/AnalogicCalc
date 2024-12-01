@@ -21,9 +21,9 @@
   3. Clique em "=" para ver o cálculo final.
 
 ## Imagens
-![Analogic Calc](./Image/Screenshot_3.png))
-![Analogic Calc](./Image/Screenshot_4.png))
-![Analogic Calc](./Image/Screenshot_5.png))
+![Analogic Calc](./Image/Screenshot_3.png)
+![Analogic Calc](./Image/Screenshot_4.png)
+![Analogic Calc](./Image/Screenshot_5.png)
 
 ## Link de Hospedagem 🌐
   Acesse a calculadora online:
