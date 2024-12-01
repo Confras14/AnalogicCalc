@@ -21,7 +21,7 @@
   <meta
     name="viewport"
     content="width=device-width,
-              initial-scale=1.0"
+    initial-scale=1.0"
   >
   
   <link rel="stylesheet" href="style.css">
@@ -31,29 +31,22 @@
 <body>
   <header>
     <h1>Analogic Calc</h1>
-    <div class="switchMode">
-      <label class="switch-white">
+    <ul>
+      <li>
+        <a href="https://github.com/Confras14/AnalogicCalc">
           <img
-            class="switch-white-img"
-            src="Image/Light.png"
-            alt="Sol Branco para simbolziar modo claro."
-            class="switchLight"
+            class="imgGithub"
+            src="Image/gitHub.png"
+            alt="Repositorio no github do projeto"
           >
-      </label>
-      <label class="switch-dark">
-        <img
-          class="switch-dark-img"
-          src="Image/Dark.png"
-          alt="Uma lua cinza para cimbolizar o modo escuro."
-          class="switchDark"
-        >
-      </label>
-    </div>
+        </a>
+      </li>
+    </ul>
   </header>
   <main>
     <div class="calc">
       <section class="display">
-        <p>0</p>
+        <p class="textDisplay">0123456789</p>
       </section>
 
       <section class="All-buttons">
@@ -61,35 +54,34 @@
           <button class="funcButton largeButton">C</button>
           <button class="funcButton">
             <img
-            src="Image/Vector.png"
-            alt="Seta para apagar ultimo algarimso digitado."
+              src="Image/Vector.png"
+              alt="Seta para apagar ultimo algarimso digitado."
             >
           </button>
           <button class="funcButton">%</button>
           <button class="funcButton">/</button>
-        </div>
-        <div class="buttons line02">
-          <button class="NumButton">7</button>
-          <button class="NumButton">8</button>
-          <button class="NumButton">9</button>
           <button class="funcButton">X</button>
         </div>
-        <div class="buttons line03">
-          <button class="NumButton">4</button>
-          <button class="NumButton">5</button>
-          <button class="NumButton">6</button>
+        <div class="buttons line02">
+          <button class="numButton">7</button>
+          <button class="numButton">8</button>
+          <button class="numButton">9</button>
+          <button class="numButton">0</button>
           <button class="funcButton">-</button>
         </div>
-        <div class="buttons line04-05">
+
+        <div class="buttons line03-04">
           <div class="buttonsRow">
-            <div class="buttons line04">
-              <button class="NumButton">1</button>
-              <button class="NumButton">2</button>
-              <button class="NumButton">3</button>
-            </div>
-            <div class="buttons line05">
-              <button class="NumButton ">0</button>
+            <div class="buttons line03">
+              <button class="numButton">4</button>
+              <button class="numButton">5</button>
+              <button class="numButton">6</button>
               <button class="funcButton">,</button>
+            </div>
+            <div class="buttons line04">
+              <button class="numButton">1</button>
+              <button class="numButton">2</button>
+              <button class="numButton">3</button>
               <button class="funcButton">=</button>
             </div>
           </div>
