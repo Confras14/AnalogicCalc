@@ -1,114 +1,41 @@
 let display = document.querySelector(".textDisplay")
+let arrayDisplayValue
+
+let allButtons = document.querySelectorAll(".button")
+
 let funcButtons = document.querySelectorAll(".funcButton")
 let numButtons = document.querySelectorAll(".numButton")
-let allButtons  = document.querySelectorAll("button")
+
+let sumButton = document.querySelectorAll(".sumButton")
+let subButton = document.querySelectorAll(".subButton")
+let multButton = document.querySelectorAll(".multButton")
+let divButton = document.querySelectorAll(".divButton")
+let modButton = document.querySelectorAll(".modButton")
+let backSpaceButton = document.querySelectorAll(".backSpaceButton")
+let equalButton = document.querySelectorAll(".equalButton")
+let clearButton = document.querySelectorAll(".clearButton")
+let dotButton = document.querySelectorAll(".dotButton")
+
+let swichOperator = true
+let haveADot = false
 
 let buttonTemp
 let displayValue = 0
-let numberTemp1 = displayValue
-let operador
+let numberBefore, numberAfter
+let operator
 
 allButtons.forEach(n => {
   n.addEventListener("click", () => {
     console.log(n.innerHTML)
-
     buttonTemp = n.innerHTML
-
-    // Funcionais
-    if (n.classList.contains("funcButton")) {
-      if(buttonTemp.length > 1) {
-        let arrayDisplayValue = String(displayValue).split('')
-        arrayDisplayValue.pop()
-        displayValue = arrayDisplayValue.join('')
-        displayReolad() 
-        return
-      }
-
-      if(buttonTemp === 'C') {
-        displayValue = 0
-        displayReolad()
-        return
-      }
-
-      if(buttonTemp === ',') {
-        let arrayDisplayValue = String(displayValue).split('')
-        arrayDisplayValue.push('.')
-        displayValue = arrayDisplayValue.join('')
-        displayReolad()
-        return
-      }
-
-      if(buttonTemp === '+') {
-        numberTemp1 = displayValue
-        displayValue = ''
-        operador = '+'
-        return
-      }
-
-      if(buttonTemp === '-') {
-        numberTemp1 = displayValue
-        displayValue = ''
-        operador = '-'
-        return
-      }
-
-      if(buttonTemp === 'X') {
-        numberTemp1 = displayValue
-        displayValue = ''
-        operador = '*'
-        return
-      }
-
-      if(buttonTemp === '/') {
-        numberTemp1 = displayValue
-        displayValue = ''
-        operador = '/'
-        return
-      }
-
-      if(buttonTemp === '%') {
-        numberTemp1 = displayValue
-        displayValue = ''
-        operador = '%'
-        return
-      }
-
-      if(buttonTemp === '=') {
-        switch (operador) {
-          case '+':
-            displayValue = `${Number(numberTemp1) + Number(displayValue)}`
-            break
-          case '-':
-            displayValue = `${Number(numberTemp1) - Number(displayValue)}`
-            break
-          case '/':
-            displayValue = `${Number(numberTemp1) / Number(displayValue)}`
-            break
-          case '*':
-            displayValue = `${Number(numberTemp1) * Number(displayValue)}`
-            break
-          case '%':
-            displayValue = `${Number(numberTemp1) % Number(displayValue)}`
-            break
-        }
-        
-        operador = null
-        numberTemp1 = null
-        
-        displayReolad()
-        return
-      }
-    }
     
-    // Numero
-    if (n.classList.contains("numButton")) {
-
+    if(n.classList.contains("numButton")) {
       if(displayValue == 0 && buttonTemp == 0) {
         return
       }
       
-      let arrayDisplayValue = String(displayValue).split('')
-      if(arrayDisplayValue[0] == 0) {
+      arrayDisplayValue = String(displayValue).split('')
+      if(arrayDisplayValue[0] == 0 && arrayDisplayValue[1] != ".") {
         arrayDisplayValue.shift()
       }
       arrayDisplayValue.push(buttonTemp)
@@ -117,8 +44,77 @@ allButtons.forEach(n => {
       displayReolad()
       return
     }
+
+    if(n.classList.contains("funcButton")){
+      if(n.classList.contains("clearButton")) {
+        displayValue = 0
+        resetValues()
+        displayReolad()
+        return
+      }
+      
+      if(n.classList.contains("dotButton")) {
+        arrayDisplayValue = displayValue.toString().split("")
+        arrayDisplayValue.forEach(n => {
+          if(n == "."){
+            haveADot = true 
+          }
+        })
+
+        if(!haveADot) {
+          arrayDisplayValue.push(".")
+          displayValue = arrayDisplayValue.join("")
+        }
+        displayReolad()
+      }
+      
+      if(n.classList.contains("backSpaceButton")) {
+        let arrayDisplayValue = displayValue.toString().split("")
+        arrayDisplayValue.pop()
+        displayValue = arrayDisplayValue.join("")
+        displayReolad()
+      }
+      
+      if(n.classList.contains("equalButton")) {
+        numberBefore = displayValue
+        displayValue = eval(`${Number(numberAfter)} ${operator} ${Number(numberBefore)}`)
+        swichOperator = true
+        displayReolad()
+        resetValues()
+      }
+
+      if(n.classList.contains("operatorButton")) {
+        operator = defineOperator(buttonTemp)
+
+        if(swichOperator) {
+          numberAfter = displayValue 
+          swichOperator = false
+        }
+
+        displayValue = 0
+        displayReolad()
+      }
+    }
   })
 })
+
+function defineOperator(operator) {
+  if(operator == "X") {
+    return "*"
+  }
+
+  if(operator.length > 1) {
+    return "%"
+  }
+  
+  return operator
+}
+
+function resetValues() {
+  numberBefore = ''
+  numberAfter = ''
+  operator = ``
+}
 
 function displayReolad() {
   display.innerHTML = displayValue
